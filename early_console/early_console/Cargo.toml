@@ -13,7 +13,8 @@ bitflags = "2.2"
 axconfig = { git = "ssh://git@github.com/shilei-massclouds/axconfig.git" }
 
 [target.'cfg(target_arch = "x86_64")'.dependencies]
-x86_64 = "0.14"
+#x86_64 = "0.14.12"
+x86_64 = "0.15.2"
 spinbase = { git = "ssh://git@github.com/shilei-massclouds/spinbase.git" }
 
 [target.'cfg(any(target_arch = "riscv32", target_arch = "riscv64"))'.dependencies]

@@ -1,5 +1,6 @@
 use core::{arch::asm, fmt};
 use memory_addr::VirtAddr;
+use core::arch::naked_asm;
 
 use super::GdtStruct;
 
@@ -208,7 +209,7 @@ impl TaskContext {
 
 #[naked]
 unsafe extern "C" fn context_switch(_current_stack: &mut u64, _next_stack: &u64) {
-    asm!(
+    naked_asm!(
         "
         push    rbp
         push    rbx
@@ -226,7 +227,7 @@ unsafe extern "C" fn context_switch(_current_stack: &mut u64, _next_stack: &u64)
         pop     rbx
         pop     rbp
         ret",
-        options(noreturn),
+        options(),
     )
 }
 
