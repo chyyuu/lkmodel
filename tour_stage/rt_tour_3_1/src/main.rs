@@ -15,7 +15,7 @@ const BLOCK_SIZE: usize = 0x200;    // 512
 
 #[no_mangle]
 pub extern "Rust" fn runtime_main(_cpu_id: usize, _dtb_pa: usize) {
-    axlog2::init("info");
+    axlog2::init("debug");
     info!("[rt_tour_3_1]: ...");
 
     axalloc::init();

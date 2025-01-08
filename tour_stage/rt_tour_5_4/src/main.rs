@@ -22,7 +22,7 @@ d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
 /// The main entry point for monolithic kernel startup.
 #[cfg_attr(not(test), no_mangle)]
 pub extern "Rust" fn runtime_main(cpu_id: usize, dtb: usize) {
-    axlog2::init("info");
+    axlog2::init("debug");
     info!("[rt_tour_5_4]: ...");
     init(cpu_id, dtb);
     start(cpu_id, dtb);

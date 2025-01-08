@@ -19,7 +19,7 @@ static APP_READY: Mutex<bool> = Mutex::new(false);
 
 #[no_mangle]
 pub extern "Rust" fn runtime_main(cpu_id: usize, dtb_pa: usize) {
-    axlog2::init("info");
+    axlog2::init("debug");
     info!("[rt_tour_3_4]: ...");
 
     // Setup simplest trap framework.
